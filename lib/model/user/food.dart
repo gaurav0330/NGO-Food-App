@@ -1,7 +1,4 @@
 class Food{
-  String _name;
-  DateTime _time;
-
-  Food(this._name, this._time);
-
+  late String _name;
+  late DateTime _time;
 }
