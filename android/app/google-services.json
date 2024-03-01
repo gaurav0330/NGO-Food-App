@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1055814398201",
+    "project_id": "ngo-food-app",
+    "storage_bucket": "ngo-food-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055814398201:android:e8fe5ce09a06fcb701f228",
+        "android_client_info": {
+          "package_name": "com.example.ngo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT_BSaB8A2NaIAqU_pdKYWpcWFzqahxrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
