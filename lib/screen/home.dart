@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ngo/widget/customcard.dart';
 
 class HomeActivity extends StatefulWidget {
   const HomeActivity({super.key});
@@ -8,27 +9,24 @@ class HomeActivity extends StatefulWidget {
 }
 
 class _HomeActivityState extends State<HomeActivity> {
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-
       appBar: AppBar(
         backgroundColor: Colors.blue.shade200,
         toolbarHeight: 60,
         elevation: 0.0,
         centerTitle: true,
-        leading:IconButton(
-              icon: const Icon(Icons.person,color: Colors.white),
-              onPressed: () {
-                // Add your left button functionality here
-              },
+        leading: IconButton(
+          icon: Image.asset('assets/home/account.png', height: 53, width: 52),
+          onPressed: () {
+            // Add your left button functionality here
+          },
         ),
-        title: Text('Home'),
+        title: const Text('Home'),
         actions: [
-        IconButton(
-            icon: const Icon(Icons.call),
+          IconButton(
+            icon: Image.asset('assets/home/phone.png', height: 33, width: 37),
             onPressed: () {
               // Add your right button functionality here
             },
@@ -36,25 +34,24 @@ class _HomeActivityState extends State<HomeActivity> {
           ),
         ],
       ),
-       body: SafeArea(
+      body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             mainAxisSize: MainAxisSize.max,
             children: [
-              SizedBox(height: 20,),
+              const SizedBox(
+                height: 20,
+              ),
               Center(
                 child: Container(
                   width: 300,
                   height: 300,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.lightBlue
-                    // image: DecorationImage(
-                    //   // image: AssetImage('assets/image.jpg'), // Path to your image asset
-                    //   fit: BoxFit.cover,
-                    // ),
-                  ),
+                      color: Colors.lightBlue),
+                  child: Image.asset('assets/home/person.png',
+                      fit: BoxFit.fill), // Path to your image asset
                 ),
               ),
               const Padding(
@@ -78,147 +75,101 @@ class _HomeActivityState extends State<HomeActivity> {
                 ),
                 child: const LinearProgressIndicator(
                   value: 0.5, // 50% progress
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.blue), // Custom color
-                  backgroundColor: Colors.transparent, // Make background transparent to see container's background color
+                  valueColor: AlwaysStoppedAnimation<Color>(
+                      Colors.blue), // Custom color
+                  backgroundColor: Colors
+                      .transparent, // Make background transparent to see container's background color
                 ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-
-                  Card(
-                    elevation: 4, // Adds a shadow to the card
-                    child: Container(
-                      width: 170,
-                      height: 100,
-                      decoration: const BoxDecoration(
-                          color: Colors.lightBlue
-                        // image: DecorationImage(
-                        // image: AssetImage('assets/background_image.jpg'), // Path to your background image asset
-                        // fit: BoxFit.cover,
-                        // ),
-                      ),
-                      child: const Padding(
-                        padding: EdgeInsets.only(left: 20, right: 20, top: 50),
-                        child: Text(
-                          'Guidlines', // Text to be displayed over the background image
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
+                  CustomCard(
+                    width: 170,
+                    height: 100,
+                    text: 'Guidelines',
+                    backgroundColor: Colors.lightBlue,
+                    textstyle: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
                     ),
+                    elevation: 4,
+                    icon: Image.asset('assets/home/guild.png'),
+                    icon_width: 50,
+                    icon_height: 50,
                   ),
-                  Card(
-                    elevation: 4, // Adds a shadow to the card
-                    child: Container(
-                      width: 170,
-                      height: 100,
-                      decoration: const BoxDecoration(
-                          color: Colors.lightBlue
-                        // image: DecorationImage(
-                        // image: AssetImage('assets/background_image.jpg'), // Path to your background image asset
-                        // fit: BoxFit.cover,
-                        // ),
-                      ),
-                      child: const Align(
-                        alignment: Alignment.bottomLeft,
-                        child: Text(
-                          ' Donate\n Food', // Text to be displayed over the background image
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
+                  CustomCard(
+                    width: 170,
+                    height: 100,
+                    text: 'Donate\n Food',
+                    backgroundColor: Colors.lightBlue,
+                    textstyle: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
                     ),
+                    elevation: 4,
+                    icon: Image.asset(
+                      'assets/home/donate.png',
+                    ),
+                    icon_width: 103,
+                    icon_height: 85,
                   ),
                 ],
-
               ),
               Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Card(
-                      elevation: 4, // Adds a shadow to the card
-                      child: Container(
-                        width: 170,
-                        height: 100,
-                        decoration: const BoxDecoration(
-                            color: Colors.lightBlue
-                          // image: DecorationImage(
-                          // image: AssetImage('assets/background_image.jpg'), // Path to your background image asset
-                          // fit: BoxFit.cover,
-                          // ),
-                        ),
-                        child: const Center(
-                          child: Text(
-                            'Map', // Text to be displayed over the background image
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Card(
-                      elevation: 4, // Adds a shadow to the card
-                      child: Container(
-                        width: 170,
-                        height: 100,
-                        decoration: const BoxDecoration(
-                            color: Colors.lightBlue
-                          // image: DecorationImage(
-                          // image: AssetImage('assets/background_image.jpg'), // Path to your background image asset
-                          // fit: BoxFit.cover,
-                          // ),
-                        ),
-                        child: const Center(
-                          child: Text(
-                            'View Your\n Previous History', // Text to be displayed over the background image
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-
-                ),
-              ),
-              Card(
-                elevation: 4, // Adds a shadow to the card
-                child: Container(
-                  width: double.maxFinite,
-                  height: 100,
-                  decoration: const BoxDecoration(
-                      color: Colors.lightBlue
-                    // image: DecorationImage(
-                    // image: AssetImage('assets/background_image.jpg'), // Path to your background image asset
-                    // fit: BoxFit.cover,
-                    // ),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      'We Are on Our Way', // Text to be displayed over the background image
-                      style: TextStyle(
+                    CustomCard(
+                      width: 170,
+                      height: 100,
+                      text: 'Map',
+                      backgroundColor: Colors.lightBlue,
+                      textstyle: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
+                      elevation: 4,
+                      icon: Image.asset('assets/home/map.png'),
+                      icon_width: 111,
+                      icon_height: 100,
                     ),
-                  ),
+                    CustomCard(
+                      width: 170,
+                      height: 100,
+                      text: 'View Your\n Previous History',
+                      backgroundColor: Colors.lightBlue,
+                      textstyle: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      elevation: 4,
+                      icon: Image.asset('assets/home/history.png'),
+                      icon_width: 57,
+                      icon_height: 53,
+                    )
+                  ],
                 ),
               ),
+              CustomCard(
+                width: double.maxFinite,
+                height: 100,
+                text: 'We Are on Our Way',
+                backgroundColor: Colors.lightBlue,
+                textstyle: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+                elevation: 4,
+                icon: Image.asset('assets/home/bus.png'),
+                icon_width: 76,
+                icon_height: 51,
+              )
             ],
           ),
         ),
@@ -227,76 +178,3 @@ class _HomeActivityState extends State<HomeActivity> {
   }
 }
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final double appBarHeight;
-  final Widget leftButton;
-  final Widget rightButton;
-
-  const CustomAppBar({super.key,
-    required this.appBarHeight,
-    required this.leftButton,
-    required this.rightButton,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: appBarHeight,
-      color: Colors.blue, // Customize app bar color as needed
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 8.0),
-            child: leftButton,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0),
-            child: rightButton,
-          ),
-        ],
-      ),
-    );
-  }
-
-  @override
-  Size get preferredSize => Size.fromHeight(appBarHeight);
-}
-
-class CustomCard extends StatelessWidget{
-  final double elevation;
-  final double width;
-  final double height;
-  late  Colors colors;
-
-
-  CustomCard( this.colors ,{ required this.elevation, required this.width, required this.height});
-
-  @override
-  Widget build(BuildContext context) {
-   return Card(
-     elevation: 4, // Adds a shadow to the card
-     child: Container(
-       width: width,
-       height: height,
-       decoration: BoxDecoration(
-         color: colors,
-         // image: DecorationImage(
-         // image: AssetImage('assets/background_image.jpg'), // Path to your background image asset
-         // fit: BoxFit.cover,
-         // ),
-       ),
-       child: const Center(
-         child: Text(
-           'We Are on Our Way', // Text to be displayed over the background image
-           style: TextStyle(
-             color: Colors.white,
-             fontSize: 20,
-             fontWeight: FontWeight.bold,
-           ),
-         ),
-       ),
-     ),
-   );
-  }
-}
