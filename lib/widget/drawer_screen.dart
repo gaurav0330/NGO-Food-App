@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ngo/screen/feedback_screen.dart';
 import 'package:ngo/widget/drawer_item_screen.dart';
 
 class DrawerScreen extends StatefulWidget {
@@ -59,6 +60,7 @@ class _DrawerScreen1State extends State<DrawerScreen> {
             ),
             GestureDetector(child: DrawerItem(startIcon: Icons.account_circle_sharp, text: 'Edit Profile')),
             GestureDetector(child: DrawerItem(text: 'Contact', startIcon: Icons.phone)),
+            GestureDetector(onTap:() =>Navigator.push(context, MaterialPageRoute(builder: (context) => FeedbackScreen(),)),child: DrawerItem(text: 'Feedback', startIcon: Icons.phone)),
             GestureDetector(child: DrawerItem(text: 'Setting', startIcon: Icons.settings)),
             GestureDetector(child: DrawerItem(text: 'Notification', startIcon: Icons.notifications)),
             GestureDetector(child: DrawerItem(text: 'Log Out', startIcon: Icons.login)),

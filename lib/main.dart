@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ngo/screen/auth/login.dart';
+import 'package:ngo/screen/splashPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,8 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Login(),
+      home: SplashScreen(),
     );
   }
 }
-

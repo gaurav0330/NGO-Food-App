@@ -34,6 +34,7 @@ class CustomCard extends StatelessWidget {
         width: width,
         height: height,
         decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
           gradient: LinearGradient(
               stops: [0.0, 0.95],
               begin: Alignment.bottomLeft,
@@ -44,26 +45,29 @@ class CustomCard extends StatelessWidget {
               ]),
         ),
         alignment: Alignment.center, // Aligns the child to the center
-        child: Stack(
-          children: [
-            Positioned(
-              height: icon_height,
-              width: icon_width,
-              top: 2,
-              right: 5,
-              child: GestureDetector(
-                onTap: () {},
-                child: icon,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Stack(
+            children: [
+              Positioned(
+                height: icon_height,
+                width: icon_width,
+                top: 2,
+                right: 5,
+                child: GestureDetector(
+                  onTap: () {},
+                  child: icon,
+                ),
               ),
-            ),
-            Positioned(
-              bottom: 2,
-              child: Text(
-                text, // Directly using text without string interpolation
-                style: textstyle,
+              Positioned(
+                bottom: 2,
+                child: Text(
+                  text, // Directly using text without string interpolation
+                  style: textstyle,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
