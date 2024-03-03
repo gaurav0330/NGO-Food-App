@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ngo/screen/auth/login.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -19,7 +20,6 @@ class SignUp extends StatelessWidget {
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 40
-
                   ),
                 ),
               ),
@@ -176,7 +176,13 @@ class SignUp extends StatelessWidget {
               ),
             ),
           ),
-
+          SizedBox(height: 15,),
+          Text('I already have account'),
+          GestureDetector(
+              onTap:()=>Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Login(),)),
+              child: Text('Sign In',style: TextStyle(
+                  color: Colors.red,fontWeight: FontWeight.w700,fontSize: 20
+              ),))
         ],
       ),
     );

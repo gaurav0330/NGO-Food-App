@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:ngo/screen/food_donation_box.dart';
+import 'package:ngo/screen/guidlinace_screen.dart';
+import 'package:ngo/screen/history_screen.dart';
+import 'package:ngo/screen/map_screen.dart';
+import 'package:ngo/screen/ngo_list_screen.dart';
+import 'package:ngo/screen/order_status.dart';
 import 'package:ngo/widget/customcard.dart';
+import 'package:ngo/widget/drawer_screen.dart';
 
 class HomeActivity extends StatefulWidget {
   const HomeActivity({super.key});
@@ -19,10 +26,7 @@ class _HomeActivityState extends State<HomeActivity> {
         centerTitle: true,
         leading: IconButton(
           icon: Image.asset('assets/home/account.png', height: 53, width: 52),
-          onPressed: () {
-            // Add your left button functionality here
-          },
-        ),
+          onPressed: () {},),
         title: const Text('Home'),
         actions: [
           IconButton(
@@ -34,6 +38,7 @@ class _HomeActivityState extends State<HomeActivity> {
           ),
         ],
       ),
+      drawer: DrawerScreen(),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -50,9 +55,12 @@ class _HomeActivityState extends State<HomeActivity> {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: Colors.lightBlue),
-                  child: Image.asset('assets/home/person.png',
+                  child: Image.asset('assets/home/img.png',
                       fit: BoxFit.fill), // Path to your image asset
                 ),
+              ),
+              SizedBox(
+                height: 15,
               ),
               const Padding(
                 padding: EdgeInsets.only(left: 20),
@@ -81,40 +89,57 @@ class _HomeActivityState extends State<HomeActivity> {
                       .transparent, // Make background transparent to see container's background color
                 ),
               ),
+              SizedBox(
+                height: 15,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  CustomCard(
-                    width: 170,
-                    height: 100,
-                    text: 'Guidelines',
-                    backgroundColor: Colors.lightBlue,
-                    textstyle: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                  GestureDetector(
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => GuidanceScreen(),
+                        )),
+                    child: CustomCard(
+                      width: 170,
+                      height: 100,
+                      text: 'Guidelines',
+                      backgroundColor: Colors.lightBlue,
+                      textstyle: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      elevation: 4,
+                      icon: Image.asset('assets/home/guild.png'),
+                      icon_width: 50,
+                      icon_height: 50,
                     ),
-                    elevation: 4,
-                    icon: Image.asset('assets/home/guild.png'),
-                    icon_width: 50,
-                    icon_height: 50,
                   ),
-                  CustomCard(
-                    width: 170,
-                    height: 100,
-                    text: 'Donate\n Food',
-                    backgroundColor: Colors.lightBlue,
-                    textstyle: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                  GestureDetector(
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => FoodDonationBox(),
+                        )),
+                    child: CustomCard(
+                      width: 170,
+                      height: 100,
+                      text: 'Donate\n Food',
+                      backgroundColor: Colors.lightBlue,
+                      textstyle: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      elevation: 4,
+                      icon: Image.asset(
+                        'assets/home/donate.png',
+                      ),
+                      icon_width: 103,
+                      icon_height: 85,
                     ),
-                    elevation: 4,
-                    icon: Image.asset(
-                      'assets/home/donate.png',
-                    ),
-                    icon_width: 103,
-                    icon_height: 85,
                   ),
                 ],
               ),
@@ -122,54 +147,97 @@ class _HomeActivityState extends State<HomeActivity> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    CustomCard(
-                      width: 170,
-                      height: 100,
-                      text: 'Map',
-                      backgroundColor: Colors.lightBlue,
-                      textstyle: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                    GestureDetector(
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MapScreen(),
+                          )),
+                      child: CustomCard(
+                        width: 170,
+                        height: 100,
+                        text: 'Map',
+                        backgroundColor: Colors.lightBlue,
+                        textstyle: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        elevation: 4,
+                        icon: Image.asset('assets/home/map.png'),
+                        icon_width: 111,
+                        icon_height: 100,
                       ),
-                      elevation: 4,
-                      icon: Image.asset('assets/home/map.png'),
-                      icon_width: 111,
-                      icon_height: 100,
                     ),
-                    CustomCard(
-                      width: 170,
-                      height: 100,
-                      text: 'View Your\n Previous History',
-                      backgroundColor: Colors.lightBlue,
-                      textstyle: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                    GestureDetector(
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HistoryScreen(),
+                          )),
+                      child: CustomCard(
+                        width: 170,
+                        height: 100,
+                        text: 'View Your\n Previous History',
+                        backgroundColor: Colors.lightBlue,
+                        textstyle: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        elevation: 4,
+                        icon: Image.asset('assets/home/history.png'),
+                        icon_width: 57,
+                        icon_height: 53,
                       ),
-                      elevation: 4,
-                      icon: Image.asset('assets/home/history.png'),
-                      icon_width: 57,
-                      icon_height: 53,
                     )
                   ],
                 ),
               ),
-              CustomCard(
-                width: double.maxFinite,
-                height: 100,
-                text: 'We Are on Our Way',
-                backgroundColor: Colors.lightBlue,
-                textstyle: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+              GestureDetector(
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => OrderStatus(),
+                    )),
+                child: CustomCard(
+                  width: double.maxFinite,
+                  height: 100,
+                  text: 'We Are on Our Way',
+                  backgroundColor: Colors.lightBlue,
+                  textstyle: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  elevation: 4,
+                  icon: Image.asset('assets/home/bus.png'),
+                  icon_width: 76,
+                  icon_height: 51,
                 ),
-                elevation: 4,
-                icon: Image.asset('assets/home/bus.png'),
-                icon_width: 76,
-                icon_height: 51,
-              )
+              ),
+              GestureDetector(
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => NgoList(),
+                    )),
+                child: CustomCard(
+                  width: double.maxFinite,
+                  height: 100,
+                  text: 'NGo List',
+                  backgroundColor: Colors.lightBlue,
+                  textstyle: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  elevation: 4,
+                  icon: Image.asset('assets/home/bus.png'),
+                  icon_width: 76,
+                  icon_height: 51,
+                ),
+              ),
             ],
           ),
         ),
@@ -177,4 +245,3 @@ class _HomeActivityState extends State<HomeActivity> {
     );
   }
 }
-

@@ -1,5 +1,6 @@
-
 import 'package:flutter/material.dart';
+import 'package:ngo/screen/auth/signup.dart';
+import 'package:ngo/screen/home.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -20,7 +21,6 @@ class Login extends StatelessWidget {
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 40
-
                   ),
                 ),
               ),
@@ -117,18 +117,28 @@ class Login extends StatelessWidget {
                   ),
                 ),
                 child: Center(
-                  child: Text(
-                    'Sign in',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
+                  child: GestureDetector(
+                    onTap: ()=> Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => HomeActivity(),)),
+                    child: Text(
+                      'Sign in',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
               ),
             ),
           ),
+          SizedBox(height: 15,),
+          Text('I Don\'t have account'),
+          GestureDetector(
+              onTap:()=>Navigator.push(context, MaterialPageRoute(builder: (context) => SignUp(),)),
+              child: Text('Sign up',style: TextStyle(
+                color: Colors.red,fontWeight: FontWeight.w700,fontSize: 20
+              ),))
         ],
       ),
     );

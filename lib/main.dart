@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ngo/screen/food_donation_box.dart';
+import 'package:ngo/screen/auth/login.dart';
 
 void main() {
   runApp(const MyApp());
 }
-
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
@@ -17,7 +15,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const FoodDonationBox(),
+      home: Login(),
     );
   }
 }

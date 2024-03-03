@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:ngo/screen/pick_up_schedule.dart';
 
 class FoodDonationBox extends StatefulWidget {
   const FoodDonationBox({Key? key}) : super(key: key);
@@ -422,7 +423,7 @@ class _FoodDonationBoxState extends State<FoodDonationBox> {
                     ),
                   ),
                   SizedBox(height: sizedBox,),
-                  ElevatedButton(onPressed: (){}, child: Text('Post Availabality')),
+                  ElevatedButton(onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (context) => PickUpSchdule(),)), child: Text('Post Availabality')),
                 ],
               ),
             ),
