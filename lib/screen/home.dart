@@ -5,6 +5,7 @@ import 'package:ngo/screen/history_screen.dart';
 import 'package:ngo/screen/map_screen.dart';
 import 'package:ngo/screen/ngo_list_screen.dart';
 import 'package:ngo/screen/order_status.dart';
+import 'package:ngo/uitls/global.dart';
 import 'package:ngo/widget/customcard.dart';
 import 'package:ngo/widget/drawer_screen.dart';
 
@@ -27,13 +28,11 @@ class _HomeActivityState extends State<HomeActivity> {
         leading: IconButton(
           icon: Image.asset('assets/home/account.png', height: 53, width: 52),
           onPressed: () {},),
-        title: const Text('Home'),
+        title: Text('Home',style: headingText,),
         actions: [
           IconButton(
             icon: Image.asset('assets/home/phone.png', height: 33, width: 37),
-            onPressed: () {
-              // Add your right button functionality here
-            },
+            onPressed: () {},
             color: Colors.white,
           ),
         ],
@@ -59,18 +58,16 @@ class _HomeActivityState extends State<HomeActivity> {
                       fit: BoxFit.fill), // Path to your image asset
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
-              const Padding(
+               Padding(
                 padding: EdgeInsets.only(left: 20),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "Donation till now !!",
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
+                    style:buttonText,
                   ),
                 ),
               ),
@@ -89,7 +86,7 @@ class _HomeActivityState extends State<HomeActivity> {
                       .transparent, // Make background transparent to see container's background color
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Row(
@@ -106,11 +103,7 @@ class _HomeActivityState extends State<HomeActivity> {
                       height: 100,
                       text: 'Guidelines',
                       backgroundColor: Colors.lightBlue,
-                      textstyle: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      textstyle: buttonText,
                       elevation: 4,
                       icon: Image.asset('assets/home/guild.png'),
                       icon_width: 50,
@@ -128,11 +121,7 @@ class _HomeActivityState extends State<HomeActivity> {
                       height: 100,
                       text: 'Donate\n Food',
                       backgroundColor: Colors.lightBlue,
-                      textstyle: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      textstyle: buttonText,
                       elevation: 4,
                       icon: Image.asset(
                         'assets/home/donate.png',
@@ -158,11 +147,7 @@ class _HomeActivityState extends State<HomeActivity> {
                         height: 100,
                         text: 'Map',
                         backgroundColor: Colors.lightBlue,
-                        textstyle: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        textstyle: buttonText,
                         elevation: 4,
                         icon: Image.asset('assets/home/map.png'),
                         icon_width: 111,
@@ -180,11 +165,7 @@ class _HomeActivityState extends State<HomeActivity> {
                         height: 100,
                         text: 'View Your\n Previous History',
                         backgroundColor: Colors.lightBlue,
-                        textstyle: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        textstyle: buttonText,
                         elevation: 4,
                         icon: Image.asset('assets/home/history.png'),
                         icon_width: 57,
@@ -205,11 +186,7 @@ class _HomeActivityState extends State<HomeActivity> {
                   height: 100,
                   text: 'We Are on Our Way',
                   backgroundColor: Colors.lightBlue,
-                  textstyle: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  textstyle: buttonText,
                   elevation: 4,
                   icon: Image.asset('assets/home/bus.png'),
                   icon_width: 76,
@@ -227,11 +204,7 @@ class _HomeActivityState extends State<HomeActivity> {
                   height: 100,
                   text: 'NGo List',
                   backgroundColor: Colors.lightBlue,
-                  textstyle: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  textstyle: buttonText,
                   elevation: 4,
                   icon: Image.asset('assets/home/bus.png'),
                   icon_width: 76,

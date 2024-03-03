@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ngo/screen/auth/signup.dart';
 import 'package:ngo/screen/home.dart';
+import 'package:ngo/uitls/global.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -10,35 +11,12 @@ class Login extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Container(
-            width: double.maxFinite,
-            child: Padding(
-              padding: const EdgeInsets.only(top: 100),
-              child: Center(
-                child: Text(
-                  "Sign in",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 40
-                  ),
-                ),
-              ),
-            ),
-            height: 250,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                transform: GradientRotation(188.15 * 3.142 / 180), // Convert degrees to radians
-                colors: [
-                  Color(0xFF0BFFA7),
-                  Color(0xFF1096CC),
-                  Color(0xFF152BF1),// Slightly whiter color
-                ],
-                stops: [0.001, 0.287, 1.0],
-              ), // Color of the circular container
-            ),
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              Image.asset('assets/auth/img.png'),
+              Text('Sign In',style: headingText.copyWith(color: Colors.white,fontSize: 35),)
+            ],
           ),
           SizedBox(height: 70,),
           Padding(

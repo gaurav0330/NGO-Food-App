@@ -18,7 +18,6 @@ class About extends StatelessWidget {
                 alignment: FractionalOffset(0.0, 0.15),
               ),
             ),
-
           ),
           Padding(
             padding: const EdgeInsets.all(20.0),

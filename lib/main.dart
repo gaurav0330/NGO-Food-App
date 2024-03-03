@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ngo/screen/auth/login.dart';
 import 'package:ngo/screen/splashPage.dart';
 
 void main() {
